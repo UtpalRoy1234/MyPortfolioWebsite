@@ -1,0 +1,85 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Poppins", sans-serif;
+    color: antiquewhite;
+    
+}
+
+body{
+    background:linear-gradient(to right, rgb(68, 59, 146), rgb(30, 1, 134))
+}
+
+nav{
+    display: flex;
+    justify-content: space-between;
+    padding-left:5rem;
+    padding-right: 10rem;
+    background-color: #1a142e;
+    color: beige;
+    height: 3.5rem;
+    align-items: center;
+}
+.title{
+    font-size: 1.3rem;
+
+}
+nav ul{
+    display: flex;
+    justify-content: space-between;
+    
+}
+nav ul li{
+    list-style: none;
+    margin: 0 2rem;
+    font-size: 1rem;
+}
+nav ul li a:hover{
+color: rgb(245, 134, 60);
+font-family: "Poppins", sans-serif;
+}
+nav ul li a{
+    text-decoration: none;
+    color: beige;
+}
+
+
+main hr{
+    border: 0;
+    background: #c0abab;
+    height: 1.2px;
+    margin: 5px 50% 2px 4px;
+}
+main{
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+    margin: 2rem;
+}
+.headings{
+    margin-left: 0.5rem;
+}
+.about_p{
+    margin-top: 1rem;
+}
+.education_journey{
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    margin: 20px;
+}
+.box{
+    display: flex;
+}
+.desc{
+    margin-left: 20px;
+}
+.year{
+    font-weight: bolder;
+}
+.vert_line{
+    height: 5rem;
+    background-color: red;
+    width: 2px;
+}
