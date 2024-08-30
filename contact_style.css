@@ -47,6 +47,19 @@ nav ul li a {
     color: beige;
 }
 
+#contact{
+    color: #ff01fc;
+}
+.active{
+    width: 100%;
+    height: 2.3px;
+    background-color: #ff01fc;
+}
+.active_tab{
+    display: flex;
+    flex-direction: column;
+}
+
 .upper {
     display: flex;
     flex-direction: column;
