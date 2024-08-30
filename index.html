@@ -4,7 +4,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Portfolio</title>
+    <title>MyPortfolioWebsite</title>
+    <link rel="shortcut icon" href="https://static.thenounproject.com/png/995687-200.png" type="image/x-icon">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link
@@ -17,7 +18,9 @@
     <nav>
         <span class="title"><i>MyPortfolioWebsite</i></span>
         <ul>
-            <li><a href="" id="home">Home</a></li>
+            <li class="active_tab"><a href="" id="home">Home</a>
+            <div class="active"></div>
+            </li>
             <li><a href="about.html" id="about">About</a></li>
             <li><a href="contact.html" id="contact">Contact</a></li>
             <li><a href="skills.html" id="skills">Skills</a></li>
@@ -44,7 +47,7 @@
     <script src="https://unpkg.com/typed.js@2.1.0/dist/typed.umd.js"></script>
     <script>
         var typed = new Typed('#element', {
-          strings: ['Programmer', 'Web Developer'],
+          strings: ['Programmer.', 'Web Developer.'],
           typeSpeed: 70,
         });
       </script>
