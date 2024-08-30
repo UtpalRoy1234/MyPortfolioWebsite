@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portfolio</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,300;0,400;0,500;0,700;1,400;1,700&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="CSS/index_style.css">
+</head>
+
+<body>
+    <nav>
+        <span class="title"><i>MyPortfolioWebsite</i></span>
+        <ul>
+            <li><a href="" id="home">Home</a></li>
+            <li><a href="about.html" id="about">About</a></li>
+            <li><a href="contact.html" id="contact">Contact</a></li>
+            <li><a href="skills.html" id="skills">Skills</a></li>
+        </ul>
+    </nav>
+
+    <main>
+        <div class="main_left">
+            <div class="info">
+                <h1>Hello, Welcome to my Website!</h1>
+                <h1>My name is <i class="name">Utpal</i></h1>
+                <h1>I am a passionate </h1>
+                <h1><span id="element"></span></h1>
+            </div>
+
+
+        </div>
+        <div class="main_right">
+            <div class="img_container">
+                <img src="development-4536630_640.webp" alt="#" class="back_img">
+            </div>
+        </div>
+    </main>
+    <script src="https://unpkg.com/typed.js@2.1.0/dist/typed.umd.js"></script>
+    <script>
+        var typed = new Typed('#element', {
+          strings: ['Programmer', 'Web Developer'],
+          typeSpeed: 70,
+        });
+      </script>
+</body>
+
+</html>
