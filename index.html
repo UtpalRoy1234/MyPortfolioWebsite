@@ -11,15 +11,20 @@
     <link
         href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,300;0,400;0,500;0,700;1,400;1,700&display=swap"
         rel="stylesheet">
-    <link rel="stylesheet" href="index_style.css">
+    <link rel="stylesheet" href="CSS/newstyle.css">
 </head>
 
 <body>
     <nav>
+        <div class="hamburger">
+            <div class="lines"></div>
+            <div class="lines"></div>
+            <div class="lines"></div>
+        </div>
         <span class="title"><i>MyPortfolioWebsite</i></span>
-        <ul>
+        <ul class="slidable  slide_left">
             <li class="active_tab"><a href="" id="home">Home</a>
-            <div class="active"></div>
+            <!-- <div class="active"></div> -->
             </li>
             <li><a href="about.html" id="about">About</a></li>
             <li><a href="contact.html" id="contact">Contact</a></li>
@@ -30,13 +35,13 @@
     <main>
         <div class="main_left">
             <div class="info">
-                <h1>Hello, Welcome to my Website!</h1>
-                <h1>My name is <i class="name">Utpal</i></h1>
-                <h1>I am a passionate </h1>
-                <h1><span id="element"></span></h1>
+                <div><h1>Hello, Welcome to my Website!</h1></div>
+                <div><h1>My name is <i class="name">Utpal</i></h1></div>
+                <div>
+                    <h1>I am a passionate </h1>
+                    <h1><span id="element"></span></h1>
+                </div>
             </div>
-
-
         </div>
         <div class="main_right">
             <div class="img_container">
@@ -49,8 +54,31 @@
         var typed = new Typed('#element', {
           strings: ['Programmer.', 'Web Developer.'],
           typeSpeed: 70,
+          loop: true,  // Enables infinite looping
+          backSpeed: 50,  // Speed at which the text is erased
+          backDelay: 1000,  // Time before starting to erase
         });
-      </script>
+    </script>
+    <script>
+        let element=document.querySelector(".hamburger");
+        element.addEventListener("click",(e)=>{
+            e.stopPropagation();
+            let item = document.querySelector(".slidable");         
+            let item2 = document.querySelector(".hamburger");         
+            item.classList.toggle("slide_left");
+            item.classList.toggle("slide_right");
+            item2.classList.toggle("hamburger_utility");
+        })
+        document.body.addEventListener("click",()=>{
+            let item = document.querySelector(".slidable");
+            let item2 = document.querySelector(".hamburger");
+            if(item.classList.contains("slide_right")){
+                item.classList.remove("slide_right");
+                item.classList.add("slide_left");
+                item2.classList.toggle("hamburger_utility");
+            }
+        })
+    </script>
 </body>
 
 </html>
