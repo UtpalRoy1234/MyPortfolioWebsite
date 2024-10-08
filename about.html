@@ -11,16 +11,21 @@
 
 <body>
     <nav>
+        <div class="hamburger">
+            <div class="lines"></div>
+            <div class="lines"></div>
+            <div class="lines"></div>
+        </div>
         <span class="title"><i>MyPortfolioWebsite</i></span>
-        <ul>
+        <ul class="slidable  slide_left">
             <li><a href="index.html" id="home">Home</a></li>
             <li class="active_tab"><a href="" id="about">About</a>
-            <div class="active"></div>
             </li>
             <li><a href="contact.html" id="contact">Contact</a></li>
             <li><a href="skills.html" id="skills">Skills</a></li>
         </ul>
     </nav>
+
     <main>
 
         <div class="about_section">
@@ -72,7 +77,26 @@
        </a>
     </main>
     
-
+    <script>
+        let element=document.querySelector(".hamburger");
+        element.addEventListener("click",(e)=>{
+            e.stopPropagation();
+            let item = document.querySelector(".slidable");         
+            let item2 = document.querySelector(".hamburger");         
+            item.classList.toggle("slide_left");
+            item.classList.toggle("slide_right");
+            item2.classList.toggle("hamburger_utility");
+        })
+        document.body.addEventListener("click",()=>{
+            let item = document.querySelector(".slidable");
+            let item2 = document.querySelector(".hamburger");
+            if(item.classList.contains("slide_right")){
+                item.classList.remove("slide_right");
+                item.classList.add("slide_left");
+                item2.classList.toggle("hamburger_utility");
+            }
+        })
+    </script>
 
 </body>
 
