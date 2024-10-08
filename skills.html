@@ -16,14 +16,17 @@
 
 <body>
     <nav>
+        <div class="hamburger">
+            <div class="lines"></div>
+            <div class="lines"></div>
+            <div class="lines"></div>
+        </div>
         <span class="title"><i>MyPortfolioWebsite</i></span>
-        <ul>
+        <ul class="slidable  slide_left">
             <li><a href="index.html" id="home">Home</a></li>
             <li><a href="about.html" id="about">About</a></li>
             <li><a href="contact.html" id="contact">Contact</a></li>
-            <li class="active_tab"><a href="" id="skills">Skills</a>
-                <div class="active"></div>
-            </li>
+            <li class="active_tab"><a href="" id="skills">Skills</a></li>
         </ul>
     </nav>
 
@@ -159,6 +162,27 @@
             </div>
         </div>
     </main>
+
+    <script>
+        let element=document.querySelector(".hamburger");
+        element.addEventListener("click",(e)=>{
+            e.stopPropagation();
+            let item = document.querySelector(".slidable");         
+            let item2 = document.querySelector(".hamburger");         
+            item.classList.toggle("slide_left");
+            item.classList.toggle("slide_right");
+            item2.classList.toggle("hamburger_utility");
+        })
+        document.body.addEventListener("click",()=>{
+            let item = document.querySelector(".slidable");
+            let item2 = document.querySelector(".hamburger");
+            if(item.classList.contains("slide_right")){
+                item.classList.remove("slide_right");
+                item.classList.add("slide_left");
+                item2.classList.toggle("hamburger_utility");
+            }
+        })
+    </script>
 </body>
 
 </html>
