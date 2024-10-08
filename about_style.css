@@ -4,65 +4,77 @@
     box-sizing: border-box;
     font-family: "Poppins", sans-serif;
     color: antiquewhite;
-    
 }
 
 body{
     background:linear-gradient(to right, rgb(68, 59, 146), rgb(30, 1, 134))
 }
 
+.hamburger{
+    display: none;
+   }
+   
+.hamburger_utility{
+    background-color:#767676;
+    box-shadow: 0 0 10px 5px #767676;   
+}
+
+.lines{
+    width: 100%;
+    height: 3px;
+    background-color: beige;
+}
+
 nav{
+    position: sticky;
+    top: 0;
     display: flex;
     justify-content: space-between;
-    padding-left:5rem;
-    padding-right: 10rem;
     background-color: #1a142e;
-    color: beige;
     height: 3.5rem;
     align-items: center;
+    padding: 0 5%;
 }
 .title{
-    font-size: 1.3rem;
+    color: beige;
+    font-size: 1.5rem;
 
 }
 nav ul{
     display: flex;
-    justify-content: space-between;
-    
-}
-nav ul li{
-    list-style: none;
-    margin: 0 2rem;
-    font-size: 1rem;
-}
-nav ul li a:hover{
-color: rgb(245, 134, 60);
-font-family: "Poppins", sans-serif;
-}
-nav ul li a{
-    text-decoration: none;
-    color: beige;
-}
-#about{
-    color: #ff01fc;
-}
-.active{
-    width: 100%;
-    height: 1.6px;
-    background-color: #ff01fc;
-}
-.active_tab{
-    display: flex;
-    flex-direction: column;
+    justify-content: space-between;   
 }
 
+nav ul li{
+    list-style: none;
+    margin: 0 1rem;
+    font-size: 1rem;
+}
+
+nav ul li a {
+    text-decoration: none;
+    color: beige;
+    transition: color 0.3s ease;
+}
+
+nav ul li:not(.active_tab) a:hover{
+    transition: color 0.5s ease;
+    color: rgb(245, 134, 60);
+}
+
+.active_tab a{
+    color: #ff01fc;
+    border-bottom: 2px solid #ff01fc;
+}
 
 main hr{
     border: 0;
+    min-width: 160px;
     background: #c0abab;
     height: 1.2px;
     margin: 5px 50% 2px 4px;
 }
+
 main{
     display: flex;
     flex-direction: column;
@@ -103,4 +115,68 @@ main{
     border-radius: 8px;
     margin-left: 50px;
     border: none;
+}
+
+@media screen and (max-width: 1200px) {
+    .title {
+        font-size: 1.3rem;
+    }
+
+    nav ul li {
+        margin: 0 1rem;
+    }
+}
+
+@media screen and (max-width: 768px) {
+
+    .title {
+        font-size: 1.1rem;
+    }
+
+    nav ul li {
+        margin: 0 0.5rem;
+    }
+
+}
+
+@media (max-width:500px){
+    nav{
+        flex-direction: row-reverse;
+    }
+
+    .slidable{
+        max-width: 175px;
+        width: 50vw;
+        height: 160px;
+        border-radius: 4px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        position: absolute;
+        background-color: rgba(0, 0, 0, 0.8);
+        top: 40px;
+        flex-direction: column;
+        gap: 0.5rem;
+        transition:all 0.5s ease;
+    }
+    .slide_left{
+        left: -200px;
+    }
+    .slide_right{
+        left:0.5px;
+    }
+    .slidable li a{
+        font-size: 1.2rem;
+    }
+    .hamburger{
+        height: 20px;
+        width: 30px;        
+        position: absolute;
+        top: 20px;
+        left: 10px;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-evenly;
+        gap: 3px;      
+    }
 }
