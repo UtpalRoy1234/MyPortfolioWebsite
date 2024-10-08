@@ -11,29 +11,33 @@
     <link
         href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,300;0,400;0,500;0,700;1,400;1,700&display=swap"
         rel="stylesheet">
-    <link rel="stylesheet" href="contact_style.css">
+    <link rel="stylesheet" href="CSS/contact_style.css">
 </head>
 
 <body>
     <nav>
+        <div class="hamburger">
+            <div class="lines"></div>
+            <div class="lines"></div>
+            <div class="lines"></div>
+        </div>
         <span class="title"><i>MyPortfolioWebsite</i></span>
-        <ul>
+        <ul class="slidable  slide_left">
             <li><a href="index.html" id="home">Home</a></li>
             <li><a href="about.html" id="about">About</a></li>
             <li class="active_tab"><a href="" id="contact">Contact</a>
-                <div class="active"></div>
             </li>
             <li><a href="skills.html" id="skills">Skills</a></li>
         </ul>
     </nav>
 
     <div class="upper">
-        <h1 class="header">Get in Touch</h1>
+        <h1 class="header1">Get in Touch</h1>
         <p class="intro">Feel free to reach out to me for collaborations, project inquiries, or just to say hello!</p>
     </div>
 
     <div class="contact_info">
-        <h1>Contact Me</h1>
+        <h1 class="header2">Contact Me</h1>
         <div class="contact_methods">
             <div class="email">
                 <img src="gmail.png" alt="" class="icon">
@@ -50,6 +54,27 @@
             <a href="https://github.com/UtpalRoy1234"><img src="github.png" alt="" class="sites_icon"></a>
         </div>
     </div>
+
+    <script>
+        let element=document.querySelector(".hamburger");
+        element.addEventListener("click",(e)=>{
+            e.stopPropagation();
+            let item = document.querySelector(".slidable");         
+            let item2 = document.querySelector(".hamburger");         
+            item.classList.toggle("slide_left");
+            item.classList.toggle("slide_right");
+            item2.classList.toggle("hamburger_utility");
+        })
+        document.body.addEventListener("click",()=>{
+            let item = document.querySelector(".slidable");
+            let item2 = document.querySelector(".hamburger");
+            if(item.classList.contains("slide_right")){
+                item.classList.remove("slide_right");
+                item.classList.add("slide_left");
+                item2.classList.toggle("hamburger_utility");
+            }
+        })
+    </script>
 </body>
 
 </html>
