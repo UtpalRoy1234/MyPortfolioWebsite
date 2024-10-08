@@ -125,6 +125,7 @@ nav ul li:not(.active_tab) a:hover {
     background-color: white;
     height: 1px;
     width: 45%;
+    min-width: 137px;
 }
 .sites{
     display: flex;
@@ -209,7 +210,7 @@ nav ul li:not(.active_tab) a:hover {
     }
 }
 
-@media (max-width:500px){
+@media (max-width:400px){
     .contact_methods{
         flex-direction: column;
         align-items: center;
